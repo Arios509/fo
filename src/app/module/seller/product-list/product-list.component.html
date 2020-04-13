@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Product name</td>
+        <td>ID</td>
+
+        <td>Quantity</td>
+        <td>Status</td>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="products.length === 0">
+        no data
+
+      </ng-container>
+      <tr *ngFor="let product of products; let i = index"
+       class="click">
+        <td>{{i+1}}</td>
+        <td>{{product.product_name}}</td>
+        <td>{{product.product_Id}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.status}}</td>
+      </tr>
+    </tbody>
+  </table>
