@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from 'src/app/core/_services/product.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -10,8 +11,8 @@ import { Subscription } from 'rxjs';
 export class ProductListComponent implements OnInit, OnDestroy {
 
   private subs: Subscription[] = [];
-  products: any;
-  constructor(private _productService: ProductService) { }
+  products: any = [];
+  constructor(private _productService: ProductService, private router: Router ) { }
 
 
   ngOnInit(): void {
@@ -21,12 +22,16 @@ export class ProductListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subs.forEach(subscription => subscription.unsubscribe());
   }
-  
+
   onFetchProduct = () => {
     this.subs.push(
       this._productService.onFetchProduct().subscribe(res => {
         this.products = res;
       })
     )
+  }
+
+  onClickProduct = (id: string) => {
+    this.router.navigate(['/home/product/' + id]);
   }
 }

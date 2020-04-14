@@ -1,0 +1,22 @@
+<header>
+  <a [routerLink]="['/home/product']" routerLinkActive="router-link-active">LOGO</a>
+  <nav>
+    <ul class="nav_links">
+      <li>
+        <a [routerLink]="['/home/product']" routerLinkActive="router-link-active">Home</a>
+
+      <li>
+        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active">Product</a>
+      </li>
+      <li>
+        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active">Shop</a>
+      </li>
+      <li>
+        <a [routerLink]="['/routePath']" routerLinkActive="router-link-active">Contact us</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<ng-content></ng-content>

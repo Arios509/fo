@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
     this.subs.push(
       this._authService.postLogin(form).subscribe(res => {
-        this.router.navigate(['/product'])
+        this.router.navigate(['/home/product'])
       })
     )
   }

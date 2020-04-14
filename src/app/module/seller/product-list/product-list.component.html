@@ -1,26 +1,43 @@
-<table class="table table-bordered">
-    <thead>
-      <tr>
-        <td>#</td>
-        <td>Product name</td>
-        <td>ID</td>
+<section>
+  <div class="card">
+    <div class="card-header">
+      <h4>My product</h4>
+      <a [routerLink]="['/home/create']" routerLinkActive="router-link-active" class=" ml-auto">
+        <button class="btn btn-primary btn-sm">
+          <i class="fas fa-plus"></i> Create
+        </button>
+      </a>
 
-        <td>Quantity</td>
-        <td>Status</td>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngIf="products.length === 0">
-        no data
+    </div>
+    <div class="card-content">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Product name</td>
+            <td>ID</td>
 
-      </ng-container>
-      <tr *ngFor="let product of products; let i = index"
-       class="click">
-        <td>{{i+1}}</td>
-        <td>{{product.product_name}}</td>
-        <td>{{product.product_Id}}</td>
-        <td>{{product.quantity}}</td>
-        <td>{{product.status}}</td>
-      </tr>
-    </tbody>
-  </table>
+            <td>Quantity</td>
+            <td>Status</td>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="products.length === 0">
+            no data
+
+          </ng-container>
+          <tr *ngFor="let product of products; let i = index" class="click" 
+          (click)="onClickProduct(product._id)">
+            <td>{{i+1}}</td>
+            <td><img src="assets/images/iphone11.jfif" width="50" height="50">
+              {{product.product_name}}</td>
+            <td>{{product.product_Id}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</section>

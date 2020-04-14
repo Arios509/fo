@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+ import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SellerViewModule } from './module/seller/seller.module';
@@ -9,13 +9,14 @@ import { AuthInterceptor } from './core/_helpers/auth-interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SellerViewModule
+    SellerViewModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
     {

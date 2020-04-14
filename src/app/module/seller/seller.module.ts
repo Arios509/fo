@@ -7,19 +7,27 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { CommonModule } from '@angular/common';
 import { SellerRoutingModule } from './seller-routing.module';
+import { LayoutComponent } from './layout/layout.component';
+import { MainComponent } from 'src/app/core/_header/main/main.component';
+import { CreateComponent } from './product-list/create/create.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
     declarations: [
         LoginComponent,
         RegisterComponent,
         ProductListComponent,
-        ProductDetailComponent
+        ProductDetailComponent,
+        LayoutComponent,
+        MainComponent,
+        CreateComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        SellerRoutingModule
+        SellerRoutingModule,
+        MarkdownModule.forChild(),
     ],
     exports: [
         LoginComponent,
@@ -29,4 +37,4 @@ import { SellerRoutingModule } from './seller-routing.module';
     ]
 })
 
-export class SellerViewModule {}
+export class SellerViewModule { }

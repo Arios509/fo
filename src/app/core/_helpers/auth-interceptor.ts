@@ -28,7 +28,8 @@ export class AuthInterceptor implements HttpInterceptor {
             .pipe(
                 catchError((error: HttpErrorResponse) => {
                     const rt = localStorage.getItem('REFRESH_TOKEN');
-                    if (error.status === 400) {
+                    console.log(rt)
+                    if (error.status === 403) {
                         if (!rt) {
                             console.log('No refresh token');
                             this.router.navigate(['main/login']);
