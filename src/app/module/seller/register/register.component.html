@@ -1,1 +1,67 @@
-<p>register works!</p>
+<section>
+  <div class="login_register_wrap section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-md-10">
+          <div class="login_wrap">
+            <div class="padding_eight_all bg-white">
+              <div class="heading_s1">
+                <h3>Register</h3>
+              </div>
+              <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="name" placeholder="Name">
+                  <div *ngIf="submitted && f.name.errors">
+                    <div *ngIf="f.name.errors.required" class="invalid-text">Name is required</div>
+
+                    <div *ngIf="f.name.errors.minlength" class="invalid-text">Name at least 6 characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                  <div *ngIf="submitted && f.email.errors">
+                    <div *ngIf="f.email.errors.required" class="invalid-text">Email address is required</div>
+                    <div *ngIf="f.email.errors.email" class="invalid-text">Email address is not valid</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                  <div *ngIf="submitted && f.password.errors">
+                    <div class="" *ngIf="f.password.errors.required" class=" invalid-text">Password is required</div>
+                    <div class="" *ngIf="f.password.errors.minlength" class="invalid-text">Password at least 6
+                      characters</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="confirmPassword"
+                    placeholder="Confirm password">
+                  <div *ngIf="submitted && f.confirmPassword.errors">
+                    <div class="" *ngIf="f.confirmPassword.errors.required" class="invalid-text">Confirm password is
+                      required</div>
+                    <div class="" *ngIf="f.confirmPassword.errors.mustMatch" class="invalid-text">Both password must be
+                      same</div>
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" value="submit" class="btn_3">
+                    sign up
+                  </button>
+                </div>
+              </form>
+              <div class="or_line">
+                <span>or</span>
+              </div>
+              <div class="form-note text-center">
+                Already have an account?
+                <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login
+                  now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../_services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _authService: AuthService) { }
 
   ngOnInit(): void {
+    console.log('ererara')
   }
+
+  onLogout = () => {
+    console.log('her')
+    this._authService.onLogout().subscribe(res => {
+      
+    })
+  }
+
 
 }

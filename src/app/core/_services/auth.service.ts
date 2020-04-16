@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../_models/userr/user.model';
 import { environment } from 'src/app/shared/global';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   postLogin = (form: User) => {
     return this.http.post<User>(`${environment.API_SERVER}/api/user/login`, form)
@@ -22,6 +23,16 @@ export class AuthService {
       );
   }
 
+  postSignUp = (form: User) => {
+    return this.http.post<User>(`${environment.API_SERVER}/api/user/register`, form)
+    .pipe(
+      map((res: any) => {
+        alert('Success register')
+        this.router.navigate(['/login']);
+      })
+    )
+  }
+
   // refresh token
   renewToken = () => {
     return this.http.post(`${environment.API_SERVER}/api/user/token`,
@@ -29,5 +40,18 @@ export class AuthService {
       .pipe(map((res: any) => {
         localStorage.setItem('ACCESS_TOKEN', res.accessToken);
       }))
+  }
+
+  //logout
+  onLogout = () => {
+    return this.http.delete(`${environment.API_SERVER}/api/user/logout`, environment.httpOptions)
+      .pipe(
+        map((res: any) => {
+          localStorage.clear()
+          alert('Success logout')
+          this.router.navigate(['/login'])
+        })
+
+      )
   }
 }

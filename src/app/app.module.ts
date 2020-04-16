@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SellerViewModule } from './module/seller/seller.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/_helpers/auth-interceptor';
+import { MainUserModule } from './module/main/main.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AuthInterceptor } from './core/_helpers/auth-interceptor';
     AppRoutingModule,
     HttpClientModule,
     SellerViewModule,
+    MainUserModule,
     MarkdownModule.forRoot()
   ],
   providers: [
