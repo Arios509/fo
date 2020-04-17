@@ -11,7 +11,7 @@ import { CreateComponent } from './product-list/create/create.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: 'product', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     {
