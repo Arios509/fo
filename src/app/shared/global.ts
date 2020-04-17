@@ -12,7 +12,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 // Production
 export const environment = {
-  API_SERVER: 'https://shendangshashen.herokuapp.com/',
+  API_SERVER: 'https://shendangshashen.herokuapp.com',
   httpOptions : {
       headers: new HttpHeaders({
           'Content-Type': 'application/json',
