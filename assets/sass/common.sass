@@ -1,41 +1,67 @@
 .padding_eight_all
-    padding: 8%
+  padding: 8%
 
 .card
+  background: #ffffff
+  margin: 10px
+  border: none
+  .card-header
+    display: flex
+    min-height: 20px
     background: #ffffff
-    margin: 10px
-    border: none
-    .card-header
-        display: flex
-        min-height: 20px
-        background: #ffffff
-        border-bottom: 1px #dddddd solid
+    border-bottom: 1px #dddddd solid
     .card-content
-        padding: 20px
+      padding: 20px
 
 .small_details
-    display: flex
-    flex-direction: column
-    height: 100%
-    .title
-        font-size: 22px
-        color: #212121
-        font-weight: normal
-        word-break: break-word
-        border-bottom: 1px #dddddd solid
+  display: flex
+  flex-direction: column
+  height: 100%
+  .title
+    font-size: 22px
+    color: #212121
+    font-weight: normal
+    word-break: break-word
+    border-bottom: 1px #dddddd solid
     .price
-        margin: 40px 0
-        color: #f57224
-        font-size: 30px
+      margin: 40px 0
+      color: #f57224
+      font-size: 30px
     .section-title
-        color: #757575
-        font-size: 14px
-        font-weight: normal
-        span
-            vertical-align: bottom
+      color: #757575
+      font-size: 14px
+      font-weight: normal
+      span
+        vertical-align: bottom
 
 .marked_design
-    margin: 16px
-    img
-        width: 100%
+  margin: 16px
+  img
+    width: 100%
 
+.row_cus
+  display: flex
+  flex-wrap: wrap
+.label
+  display: inline-block
+
+
+  &
+    padding: 3px 10px
+    line-height: 13px
+    color: #ffffff
+    font-weight: 400
+    border-radius: 4px
+    font-size: 75%
+
+
+  &-danger
+    background-color: #fc4b6c
+
+
+  &-warning
+    background-color: #ffb22b
+
+
+  &-success
+    background-color: #26c6da
