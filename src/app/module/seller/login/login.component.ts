@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     this.subs.push(
       this._authService.postLogin(form).subscribe(res => {
         this.router.navigate(['/home/product'])
+      }, error => {
+        alert('Email or password is wrong')
       })
     )
   }

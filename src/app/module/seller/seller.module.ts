@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { MainComponent } from 'src/app/core/_header/main/main.component';
 import { CreateComponent } from './product-list/create/create.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { PipeModule } from 'src/app/app-pipe.module';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { MarkdownModule } from 'ngx-markdown';
         ReactiveFormsModule,
         SellerRoutingModule,
         MarkdownModule.forChild(),
+        PipeModule
     ],
     exports: [
         LoginComponent,

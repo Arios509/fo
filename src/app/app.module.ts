@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
  import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,8 @@ import { MainUserModule } from './module/main/main.module';
     HttpClientModule,
     SellerViewModule,
     MainUserModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    
   ],
   providers: [
     {
